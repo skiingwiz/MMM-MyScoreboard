@@ -20,6 +20,7 @@ Module.register("MMM-MyScoreboard",{
     highlightWinners: true,
     viewStyle: "largeLogos",
     showRankings: true,
+    timeFormat: "h:mm a",
     sports: [
       {
         league: "NHL",
@@ -456,10 +457,11 @@ Module.register("MMM-MyScoreboard",{
     //add game status
     var status = document.createElement("div");
     status.classList.add("status");
+    gameTimeFmt = this.config.timeFormat
     gameObj.status.forEach(function(s) {
       var statusPart = document.createElement("span");
       if(typeof(s) == 'number') {
-        s = moment(s).format('H:mm a')
+        s = moment(s).format(gameTimeFmt);
       }
       statusPart.innerHTML = s;
       status.appendChild(statusPart);
