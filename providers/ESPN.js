@@ -526,7 +526,7 @@ module.exports = {
           break;
         case "1": //scheduled
           gameState = 0;
-          status.push(moment(game.competitions[0].date).tz(localTZ).format("h:mm a"));
+          status.push(game.competitions[0].date);
           break;
         case "2": //in-progress
         case "21": //beginning of period
@@ -596,7 +596,7 @@ module.exports = {
           break;         
         default: //Anything else, treat like a game that hasn't started yet
           gameState = 0;
-          status.push(moment(game.competitions[0].date).tz(localTZ).format("h:mm a"));
+          status.push(game.competitions[0].date);
           break;
 
       }

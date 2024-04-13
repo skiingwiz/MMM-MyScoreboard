@@ -458,6 +458,9 @@ Module.register("MMM-MyScoreboard",{
     status.classList.add("status");
     gameObj.status.forEach(function(s) {
       var statusPart = document.createElement("span");
+      if(typeof(s) == 'number') {
+        s = moment(s).format('H:mm a')
+      }
       statusPart.innerHTML = s;
       status.appendChild(statusPart);
     });

@@ -181,7 +181,7 @@ module.exports = {
         case "Pre-Game":
           gameState = 0; //not started
           //Feed provides all game times in Eastern Time
-          status.push(moment(game.timestamp * 1000).tz(localTZ).format("h:mm a"));
+          status.push(game.timestamp * 1000);
           break;
 
         case "In-Progress":
@@ -291,7 +291,7 @@ module.exports = {
 
         default:
           gameState = 0;
-          status.push(moment(game.timestamp * 1000).tz(localTZ).format("h:mm a"));
+          status.push(moment(game.timestamp * 1000));
           break;
       }
 
