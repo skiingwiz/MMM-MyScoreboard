@@ -526,7 +526,7 @@ module.exports = {
           break;
         case "1": //scheduled
           gameState = 0;
-          status.push(game.competitions[0].date);
+          status.push(moment(game.competitions[0].date).format("MM/DD HH:mm a"));
           break;
         case "2": //in-progress
         case "21": //beginning of period
